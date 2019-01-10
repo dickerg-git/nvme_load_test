@@ -7,7 +7,7 @@ pipeline {
         stage('Info') {
             steps {
                 echo 'Info stage.'
-                sh 'ls -l /Public/*.bin'
+                sh 'ls -l /home/rogerd/Public/*.bin'
                 sh 'lsblk'
             }
         }
