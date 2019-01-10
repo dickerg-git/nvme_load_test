@@ -7,7 +7,8 @@ pipeline {
         stage('Info') {
             steps {
                 echo 'Info stage.'
-                sh 'ls -l /home/rogerd/Public/*.bin'
+                sh 'echo $HOME'
+                sh 'ls -l $HOME/Public/*.bin'
                 sh 'lsblk'
             }
         }
@@ -22,7 +23,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'NVME Test stage.'
-                sh '/home/rogerd/tools/fio-3.12/fio --crctest=crc32'
+                sh '/home/rogerd/tools/fio-3.12/fio /home/rogerd/tools/FIO/rand-rw.fio'
             }
         }
 
