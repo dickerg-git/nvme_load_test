@@ -7,19 +7,22 @@ pipeline {
         stage('Info') {
             steps {
                 echo 'Info stage.'
-                sh 'pwd'
+                sh 'ls -l /Public/*.bin'
+                sh 'lsblk'
             }
         }
 
         stage('Commit') {
             steps {
                 echo 'Firmware Commit stage.'
+                sh '/home/rogerd/tools/nvme-cli/nvme version'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'NVME Test stage.'
+                sh '/home/rogerd/tools/fio-3.12/fio --crctest=crc32'
             }
         }
 
