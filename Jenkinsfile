@@ -16,14 +16,14 @@ pipeline {
         stage('Commit') {
             steps {
                 echo 'Firmware Commit stage.'
-                sh '/home/rogerd/tools/nvme-cli/nvme version'
+                sh 'nvme version'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'NVME Test stage.'
-                sh '/home/rogerd/tools/fio-3.12/fio /home/rogerd/tools/FIO/rand-rw.fio'
+                sh 'fio $HOME/tools/FIO/rand-rw.fio'
             }
         }
 
