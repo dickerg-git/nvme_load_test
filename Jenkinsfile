@@ -23,7 +23,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'NVME Test stage.'
-                sh 'fio $HOME/tools/FIO/rand-rw.fio'
+                sh 'fio $HOME/tools/FIO/NVME_4k_rand_qos.fio'
             }
         }
 
