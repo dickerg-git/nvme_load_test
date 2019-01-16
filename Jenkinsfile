@@ -17,13 +17,14 @@ pipeline {
             steps {
                 echo 'Firmware Commit stage.'
                 sh 'nvme version'
+                sh 'nvme list'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'NVME Test stage.'
-                sh 'fio $HOME/tools/FIO/NVME_4k_rand_qos.fio'
+                sh 'sudo fio $HOME/tools/FIO/NVME_4k_rand_qos.fio'
             }
         }
 
