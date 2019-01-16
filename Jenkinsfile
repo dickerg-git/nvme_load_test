@@ -16,8 +16,8 @@ pipeline {
         stage('Commit') {
             steps {
                 echo 'Firmware Commit stage.'
-                sh 'nvme version'
-                sh 'nvme list'
+                sh 'sudo /usr/local/sbin/nvme version'
+                sh 'sudo /usr/local/sbin/nvme list'
             }
         }
 
