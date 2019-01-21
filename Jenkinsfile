@@ -28,7 +28,7 @@ pipeline {
             steps {
                 echo 'NVME Test stage.'
                 sh 'sudo fio $HOME/tools/FIO/NVME_128K_SR_Q128_5_15Min.fio'
-                // sh 'sudo fio $HOME/tools/FIO/NVME_4k_rand_qos.fio'
+                sh 'sudo fio $HOME/tools/FIO/NVME_4k_rand_qos.fio'
             }
         }
 
